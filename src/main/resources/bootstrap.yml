@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/XIDP-yanzemin/spring-cloud-config-server.git #配置文件所在仓库
+          search-paths: config
+          default-label: main
