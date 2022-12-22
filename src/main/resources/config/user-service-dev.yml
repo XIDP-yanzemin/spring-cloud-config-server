@@ -1,16 +1,14 @@
 server:
   port: 8081 #端口号
-management:
-  endpoint:
-    shutdown:
-      enabled: false
-  endpoints:
-    web:
-      exposure:
-        include: "*"
 spring:
+  rabbitmq:
+    host: 192.168.56.110
+    port: 5672
+    username: guest
+    password: guest
   mail:
     host: smtp.qq.com
+    version: xxxxx
     port: 465
     username: 476865287@qq.com
     password: jvyqbkmwvikgcaji
@@ -31,3 +29,11 @@ eureka:
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+  endpoint:
+    bus-refresh:
+      enabled: true
