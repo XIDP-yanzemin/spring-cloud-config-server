@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/XIDP-yanzemin/spring-cloud-config-server.git
+          uri: https://github.com/XIDP-yanzemin/config.git
           search-paths: config
           default-label: main
-          basedir: /Users/zemin.yan/Desktop/XIDP/spring-cloud-config-server
+          basedir: /Users/zemin.yan/Desktop/XIDP/config
 eureka:
   client:
     service-url:
