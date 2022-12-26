@@ -5,16 +5,23 @@ spring:
     name: spring-cloud-config-server
   cloud:
     config:
+      profile: dev
       server:
         git:
           uri: https://github.com/XIDP-yanzemin/config.git
           search-paths: config
           default-label: main
           basedir: /Users/zemin.yan/Desktop/XIDP/config
+      discovery:
+        enabled: true
+        service-id: config
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
+    instance-id: ${server.port}
