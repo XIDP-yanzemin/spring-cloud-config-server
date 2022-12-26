@@ -1,11 +1,6 @@
 server:
   port: 8081 #端口号
 spring:
-  rabbitmq:
-    host: 192.168.56.110
-    port: 5672
-    username: guest
-    password: guest
   mail:
     host: smtp.qq.com
     version: xxxxx
@@ -24,16 +19,11 @@ spring:
     protocol: smtp
 eureka:
   client:
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
       defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
-management:
-  endpoints:
-    web:
-      exposure:
-        include: bus-refresh
-  endpoint:
-    bus-refresh:
-      enabled: true
+    instance-id: ${server.port}
