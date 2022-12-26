@@ -11,7 +11,7 @@ spring:
           uri: https://github.com/XIDP-yanzemin/config.git
           search-paths: config
           default-label: main
-          basedir: /Users/zemin.yan/Desktop/XIDP/config
+          basedir: /Users/zemin.yan/Desktop/XIDP/config-server
       discovery:
         enabled: true
         service-id: config
