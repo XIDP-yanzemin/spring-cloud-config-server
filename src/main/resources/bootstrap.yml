@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: spring-cloud-config-server
   cloud:
     config:
       profile: dev
@@ -7,12 +9,13 @@ spring:
           uri: https://github.com/XIDP-yanzemin/config
           username: josieyan123
           password: YANZemin123
+          skip-ssl-validation: true
           search-paths: config
           clone-on-start: true
           force-pull: true
-#      discovery:
-#        enabled: true
-#        service-id: config
+      discovery:
+        enabled: true
+        service-id: ${spring.application.name}
 eureka:
   client:
     register-with-eureka: true
