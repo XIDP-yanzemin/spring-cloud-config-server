@@ -4,10 +4,10 @@ spring:
       profile: dev
       server:
         git:
-          uri: https://github.com/XIDP-yanzemin/config.git
+          uri: https://github.com/XIDP-yanzemin/config
           username: josieyan123
           password: YANZemin123
-          search-paths: /config
+          search-paths: config
           clone-on-start: true
           force-pull: true
 #      discovery:
@@ -18,7 +18,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://localhost:8761/eureka/
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
