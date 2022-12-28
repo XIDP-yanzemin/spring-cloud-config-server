@@ -1,20 +1,18 @@
-server:
-  port: 9006
 spring:
-  application:
-    name: spring-cloud-config-server
   cloud:
     config:
       profile: dev
       server:
         git:
           uri: https://github.com/XIDP-yanzemin/config.git
-          search-paths: config
-          default-label: main
-          basedir: /Users/zemin.yan/Desktop/XIDP/config-server
-      discovery:
-        enabled: true
-        service-id: config
+          username: josieyan123
+          password: YANZemin123
+          search-paths: /config
+          clone-on-start: true
+          force-pull: true
+#      discovery:
+#        enabled: true
+#        service-id: config
 eureka:
   client:
     register-with-eureka: true
@@ -24,4 +22,4 @@ eureka:
   instance:
     prefer-ip-address: true
     ip-address: 127.0.0.1
-    instance-id: ${server.port}
+    instance-id: config-server
