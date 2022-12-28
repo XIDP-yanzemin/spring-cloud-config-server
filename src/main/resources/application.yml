@@ -3,3 +3,24 @@ server:
 spring:
   application:
     name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/XIDP-yanzemin/spring-cloud-config-server.git
+          username: josieyan123
+          password: YANZemin123
+          search-paths: config
+      discovery:
+        enabled: true
+        service-id: ${spring.application.name}
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
