@@ -7,11 +7,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/XIDP-yanzemin/spring-cloud-config-server.git
+          uri: https://github.com/XIDP-yanzemin/config.git
           username: josieyan123
           password: YANZemin123
           search-paths: config
-          default-label: main
+        default-label: main
       discovery:
         enabled: true
         service-id: ${spring.application.name}
